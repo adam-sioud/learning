@@ -1,0 +1,51 @@
+@startuml
+
+skin rose
+
+title Klassediagram veldig enkelt Bibliotek
+
+class Bok {
+  String ISBN
+  String Tittel
+  String Forfatter
+}
+
+class Eksemplar {
+  +status
+  +strekkode
+}
+
+class Bibliotek {
+  +registrerBok(Bok, strekkode)
+  +registrerLåner(Person)
+  +registrerLån(Eksemplar, Låner)
+  +finnLedigEksemplar(bok: Bok)
+  +sendPurringer()
+  +returnerLån(Eksemplar)
+}
+
+class Låner {
+  +lånekortNummer
+  +sendPurring()
+}
+
+class Person {
+  +navn
+  +epost
+}
+
+class Lån {
+  +dato
+  +lengde
+}
+
+Bibliotek o- Låner
+Eksemplar "*" -- "1" Bok
+Bibliotek "1" o- "*" Eksemplar: har
+Bibliotek "1" *- "*" Lån 
+Lån "1" -- "1" Eksemplar
+Lån "1" -- "1" Låner
+Låner "1" -- "1" Person
+Låner "0,1" -left- "*" Eksemplar : har
+
+@enduml

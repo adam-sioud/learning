@@ -1,0 +1,2 @@
+# Hva skal du se på her
+Dette gikk jeg aldri igjennom i forelesningen. Det er en naturlig utvidelse av det som ble vist - en liste med bøker, og hvordan en kan manipulere denne listen på ymse måter. Personlig er jeg spesielt fan av å bruke lambda streams til å hente ut alle ordbøker, caste dem til ordbøker, mappe dem til heltall for antall ord, og så summere dem. Artig!

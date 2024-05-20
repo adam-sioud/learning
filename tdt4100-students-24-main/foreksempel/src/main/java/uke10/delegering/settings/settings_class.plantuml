@@ -1,0 +1,17 @@
+@startuml
+
+interface ISettings {
+    + boolean hasSetting(String s);
+	+ Object getSetting(String s);
+	+ void updateSetting(String s, Object o);
+}
+
+class MapSettings implements ISettings
+
+class DefaultingSettings implements ISettings
+
+DefaultingSettings *-- MapSettings
+DefaultingSettings o-- DefaultingSettings
+MapSettings *-- Map
+
+@enduml

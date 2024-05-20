@@ -1,0 +1,41 @@
+@startuml
+skinparam style strictuml
+
+skinparam class {
+    BackgroundColor<<checked>> Salmon
+    BackgroundColor<<unchecked>> LightBlue
+}
+
+class Throwable {
+}
+
+class Error <<unchecked>> extends Throwable {
+}
+
+class Exception extends Throwable {
+}
+
+class RuntimeException <<unchecked>> extends Exception {
+}
+
+class IOException <<checked>> extends Exception {
+}
+
+
+
+class NullPointerException <<unchecked>> extends RuntimeException {
+}
+
+class IllegalArgumentException  <<unchecked>> extends RuntimeException {
+}
+
+class IndexOutOfBoundsException  <<unchecked>> extends RuntimeException {
+}
+
+
+class ArithmeticException  <<unchecked>> extends RuntimeException {
+}
+
+
+
+@enduml

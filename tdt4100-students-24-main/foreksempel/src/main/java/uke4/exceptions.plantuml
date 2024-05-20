@@ -1,0 +1,83 @@
+@startuml
+skinparam style strictuml
+
+skinparam class {
+    BackgroundColor<<root>> Salmon
+    BackgroundColor<<exception>> Pink
+    BackgroundColor<<runtime>> LightBlue
+    BackgroundColor<<error>> LightCyan
+}
+
+class Throwable <<root>> {
+}
+
+class Error <<error>> extends Throwable {
+}
+
+class Exception <<exception>> extends Throwable {
+}
+
+class RuntimeException <<runtime>> extends Exception {
+}
+
+class IOException <<exception>> extends Exception {
+}
+
+class EOFException <<exception>> extends IOException {
+}
+
+class FileNotFoundException <<exception>> extends IOException {
+}
+
+class MalformedURLException <<exception>> extends IOException {
+}
+
+class UnknownHostException <<exception>> extends IOException {
+}
+
+class ClassNotFoundException <<exception>> extends Exception {
+}
+
+class CloneNotSupportedException <<exception>> extends Exception {
+}
+
+class ArithmeticException <<runtime>> extends RuntimeException {
+}
+
+class ClassCastException <<runtime>> extends RuntimeException {
+}
+
+class IllegalArgumentException <<runtime>> extends RuntimeException {
+}
+
+class IllegalStateException <<runtime>> extends RuntimeException {
+}
+
+class IndexOutOfBoundsException <<runtime>> extends RuntimeException {
+}
+
+class NoSuchElementException <<runtime>> extends RuntimeException {
+}
+
+class NullPointerException <<runtime>> extends RuntimeException {
+}
+
+Throwable <|-- Error
+Throwable <|-- Exception
+Exception <|-- RuntimeException
+Exception <|-- IOException
+IOException <|-- EOFException
+IOException <|-- FileNotFoundException
+IOException <|-- MalformedURLException
+IOException <|-- UnknownHostException
+Exception <|-- ClassNotFoundException
+Exception <|-- CloneNotSupportedException
+RuntimeException <|-- ArithmeticException
+RuntimeException <|-- ClassCastException
+RuntimeException <|-- IllegalArgumentException
+RuntimeException <|-- IllegalStateException
+RuntimeException <|-- IndexOutOfBoundsException
+RuntimeException <|-- NoSuchElementException
+RuntimeException <|-- NullPointerException
+
+@enduml

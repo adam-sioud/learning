@@ -1,0 +1,3 @@
+ARRAY
+Hw,Ew,Lw,Lw,Ow
+Ac,Rc,Rc,Ac,Yc

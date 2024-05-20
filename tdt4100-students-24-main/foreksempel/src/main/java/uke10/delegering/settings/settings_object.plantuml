@@ -1,0 +1,18 @@
+@startuml
+
+object "folderSettings: DefaultingSettings" as folderSettings
+object "folderUserSettings: MapSettings" as folderUser
+object "map1: Map" as map1
+object "generalSettings: DefaultingSettings" as generalSettings
+object "userGeneralSettings: MapSettings" as userGeneralSettings
+object "map2: Map" as map2
+object "defaultGeneral: MapSettings" as generalDefaultSettings
+object "map3: Map" as map3
+folderSettings -down-> folderUser: userSettings
+folderUser -down-> map1: settings
+folderSettings -down-> generalSettings: defaultSettings
+generalSettings -down-> userGeneralSettings: userSettings
+userGeneralSettings -down-> map2: settings
+generalSettings -down-> generalDefaultSettings : settings
+generalDefaultSettings -down-> map3: settings
+@enduml

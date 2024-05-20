@@ -1,0 +1,40 @@
+package oving1;
+
+public class Location {
+
+	int x, y;
+
+	int getX() {
+		return x;
+	}
+
+	int getY() {
+		return y;
+	}
+
+	void move(int dx, int dy) {
+		x = x + dx;
+		y = y + dy;
+	}
+
+	void left() {
+		move(-1, 0);
+	}
+
+	void right() {
+		move(1, 0);
+	}
+
+	void up() {
+		move(0, -1);
+	}
+
+	void down() {
+		move(0, 1);
+	}
+
+	@Override
+	public String toString() {
+		return String.format("[Location x=%d, y=%d]", x, y);
+	}
+}

@@ -1,0 +1,11 @@
+@startuml DownCounter
+
+title DownCounter
+
+class DownCounter {
+  -int counter
+  +void countDown()
+  +boolean isFinished()
+}
+
+@enduml

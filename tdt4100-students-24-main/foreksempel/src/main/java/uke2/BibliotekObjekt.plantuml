@@ -1,0 +1,35 @@
+@startuml
+
+skin rose
+
+object "bib:Bibliotek" as bib
+object "bok1:Bok" as bok1 
+object "bok2:Bok" as bok2
+object "eks1:Eksemplar" as eks1
+object "eks2:Eksemplar" as eks2
+object "eks3:Eksemplar" as eks3
+
+object "låner1:Låner" as l1
+
+object "lån1:Lån" as lan1
+
+bib --> l1
+bib -right-> lan1
+bib --> eks1
+bib --> eks2
+bib --> eks3
+
+eks1 --> bok1
+eks2 --> bok2
+eks3 --> bok2
+
+bok1 : tittel = "Big Java"
+bok2 : tittel = "Object Oriented Modelling"
+eks1 : status = "Utlånt"
+
+lan1 --> l1
+lan1 --> eks1
+lan1 : dato = 12.01.2024
+l1 --> eks1
+
+@endumlml
